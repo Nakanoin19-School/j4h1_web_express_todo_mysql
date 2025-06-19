@@ -5,7 +5,16 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <form action="/" method="post">
+      <label>タスクの追加
+        <input required type="text" name="add" placeholder="何をする?"/>
+      </label>
+      <input type="submit" value="追加"/>
+    </form>
+    <ul>
+      <% todos.forEach((todo) => { %>
+        <li><span><%= todo.content %></span></li>
+      <% }); %>
+    </ul>
   </body>
 </html>
